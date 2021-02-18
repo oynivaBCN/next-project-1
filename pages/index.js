@@ -1,34 +1,27 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import ArticleList from '../components/ArticleList'
 
-export default function Home() {
+export default function Home({articles}) {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>NextProject WebDev News</title>
+        <meta name='example name' content='next project, web development' />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          created by pandorajk
-        </p>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <ArticleList articles={articles} />
     </div>
   )
 }
+
+export const getStaticProps = async ()=> {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=6`)
+  const articles = await res.json()
+  console.log('log from index.js getStaticProps')
+  // need to reload page to see changes to getStaticProps
+  return {
+    props: {
+      articles
+    }
+  }
+}
+
