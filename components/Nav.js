@@ -11,6 +11,9 @@ const Nav = () => {
                 <li>
                     <Link href="/image">Image</Link>
                 </li>
+                <li>
+                    <Link href="/psiousNews">PsiousNews</Link>
+                </li>
             </ul>
         </nav>
     )

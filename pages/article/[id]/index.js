@@ -6,7 +6,7 @@ const article = ({ article }) => {
     const { id } = router.query
 
     return <>
-                <h1>This is an article {article.id}</h1>
+                <h1>This is article {article.id}</h1>
                 <h1>{article.title}</h1>
                 <p>{article.body}</p>
                 <br />
@@ -14,8 +14,8 @@ const article = ({ article }) => {
             </>
 }
 
-// ========= getServerSideProps ==========
-// ========= this is recommended. HTML generate on each request. Only use if needed.
+// // ========= getServerSideProps ==========
+// // ========= this is recommended. HTML generate on each request. Only use if needed.
 
 // export const getServerSideProps = async (context) => {
 //         // console.log('CONTEXT', context)
@@ -36,6 +36,7 @@ const article = ({ article }) => {
 // }
 
 // ========= OR ==========
+
 // ========= getStaticProps + getStaticPaths==========
 // ========= this is recommended. html generated at BUILD time and reused on each request
 // Your page content depends on external data: Use getStaticProps.

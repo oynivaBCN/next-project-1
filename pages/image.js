@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 const about = () => {
-    console.log('log from about page - this shows in browser console')
+    console.log('log from image page - this shows in browser console')
     return (
         <div>
             <h1 style={{textAlign: 'center'}} >Image</h1>
