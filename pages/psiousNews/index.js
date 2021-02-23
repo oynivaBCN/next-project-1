@@ -4,8 +4,10 @@ const psiousNews = ({articles}) => {
     return <div style={{textAlign: 'left'}}>
             <h1>This is a list of psious articles. Click to view:</h1>
             {articles.map(article => (
-                <Link href={`psiousNews/${article.id}`}>
-                    <h4>{article.id} - {article.title.rendered}</h4>
+                <Link href={`/psiousNews/${article.id}`} key={article.id}>
+                    <a>
+                        <h4>{article.id} - {article.title.rendered}</h4>
+                    </a>
                 </Link>
             ))}
             </div>
