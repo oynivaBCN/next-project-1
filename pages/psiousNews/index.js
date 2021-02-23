@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Config from '../../config'
 
 const psiousNews = ({articles}) => {
     return <div style={{textAlign: 'left'}}>
@@ -13,7 +12,7 @@ const psiousNews = ({articles}) => {
 }
 
 export const getServerSideProps = async () => {
-    const res = await fetch(`${Config.PSIOUS_NEWS_API}`)
+    const res = await fetch(`${process.env.PSIOUS_NEWS_API}`)
     const articles = await res.json()
 
     return {

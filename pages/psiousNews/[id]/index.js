@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import Config from '../../../config'
 
 const article = ({ article }) => {
     const router = useRouter()
@@ -19,7 +18,7 @@ const article = ({ article }) => {
 // ========= this is recommended. HTML generate on each request. Only use if needed.
 
 export const getServerSideProps = async (context) => {
-        const res = await fetch(`${Config.PSIOUS_NEWS_API}${context.params.id}/`)
+        const res = await fetch(`${process.env.PSIOUS_NEWS_API}${context.params.id}/`)
         const article = await res.json()
 
         // console.log('==========', article)
