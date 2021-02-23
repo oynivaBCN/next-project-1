@@ -13,8 +13,8 @@ const psiousNews = ({articles}) => {
             </div>
 }
 
-export const getServerSideProps = async () => {
-    const res = await fetch(`${process.env.PSIOUS_NEWS_API}`)
+export const getStaticProps = async () => {
+    const res = await fetch(process.env.PSIOUS_NEWS_API)
     const articles = await res.json()
 
     return {
@@ -23,5 +23,18 @@ export const getServerSideProps = async () => {
         }
     }
 }
+
+// export const getStaticPaths = async () => {
+//     const res = await fetch(process.env.PSIOUS_NEWS_API)
+//     const articles = await res.json()
+
+//     const ids = articles.map(article => article.id)
+//     const paths = ids.map(id => ({params : {id : id.toString()}}))
+
+//     return {
+//         paths,
+//         fallback: false
+//     }
+// }
 
 export default psiousNews
