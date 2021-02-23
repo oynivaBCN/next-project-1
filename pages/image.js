@@ -4,8 +4,8 @@ const about = () => {
     console.log('log from about page - this shows in browser console')
     return (
         <div>
-            <p>A mini project created with Next.js that simulates a Web Dev new blog.</p>
-            <p>take up viewport space.</p>
+            <h1 style={{textAlign: 'center'}} >Image</h1>
+            <p>{`Import <Image /> with 'next/image', place image outside of viewport, and see how _next network call for image takes places upon scrolling.`}</p>
             <h1>.</h1>
             <h1>.</h1>
             <h1>.</h1>
@@ -39,7 +39,6 @@ const about = () => {
             <h1>.</h1>
             <h1>.</h1>
             <h1>.</h1>
-            <h1>{`Image rendered with next <Image:/> `}</h1>
             <Image src="/screenshot.png" width={700} height={300}/>
         </div>
     )

@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div >
             <h1 className={headerSyles.title}>
-                NextProject WebDev News
+                NextProject1
             </h1>
         </div>
     )
